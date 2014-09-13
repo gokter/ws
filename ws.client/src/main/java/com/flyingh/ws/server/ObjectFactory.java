@@ -27,6 +27,8 @@ public class ObjectFactory {
     private final static QName _GetBooksByUserResponse_QNAME = new QName("http://server.ws.flyingh.com/", "getBooksByUserResponse");
     private final static QName _GetBooksByUser_QNAME = new QName("http://server.ws.flyingh.com/", "getBooksByUser");
     private final static QName _SayResponse_QNAME = new QName("http://server.ws.flyingh.com/", "sayResponse");
+    private final static QName _GetAllBooks_QNAME = new QName("http://server.ws.flyingh.com/", "getAllBooks");
+    private final static QName _GetAllBooksResponse_QNAME = new QName("http://server.ws.flyingh.com/", "getAllBooksResponse");
     private final static QName _Say_QNAME = new QName("http://server.ws.flyingh.com/", "say");
 
     /**
@@ -34,6 +36,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link GetAllBooks }
+     * 
+     */
+    public GetAllBooks createGetAllBooks() {
+        return new GetAllBooks();
     }
 
     /**
@@ -61,11 +71,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetAllBooksResponse }
+     * 
+     */
+    public GetAllBooksResponse createGetAllBooksResponse() {
+        return new GetAllBooksResponse();
+    }
+
+    /**
      * Create an instance of {@link Say }
      * 
      */
     public Say createSay() {
         return new Say();
+    }
+
+    /**
+     * Create an instance of {@link Books }
+     * 
+     */
+    public Books createBooks() {
+        return new Books();
     }
 
     /**
@@ -109,6 +135,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server.ws.flyingh.com/", name = "sayResponse")
     public JAXBElement<SayResponse> createSayResponse(SayResponse value) {
         return new JAXBElement<SayResponse>(_SayResponse_QNAME, SayResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllBooks }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server.ws.flyingh.com/", name = "getAllBooks")
+    public JAXBElement<GetAllBooks> createGetAllBooks(GetAllBooks value) {
+        return new JAXBElement<GetAllBooks>(_GetAllBooks_QNAME, GetAllBooks.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllBooksResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server.ws.flyingh.com/", name = "getAllBooksResponse")
+    public JAXBElement<GetAllBooksResponse> createGetAllBooksResponse(GetAllBooksResponse value) {
+        return new JAXBElement<GetAllBooksResponse>(_GetAllBooksResponse_QNAME, GetAllBooksResponse.class, null, value);
     }
 
     /**

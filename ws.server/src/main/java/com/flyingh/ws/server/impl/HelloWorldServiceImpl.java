@@ -1,6 +1,7 @@
 package com.flyingh.ws.server.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.jws.WebService;
 
@@ -20,6 +21,11 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 	@Override
 	public List<Book> getBooksByUser(User user) {
 		return Db.getBooksByUserId(user.getUsername(), user.getPassword());
+	}
+
+	@Override
+	public Map<String, Book> getAllBooks() {
+		return Db.getAllBooks();
 	}
 
 }

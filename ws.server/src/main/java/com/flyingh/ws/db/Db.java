@@ -18,4 +18,14 @@ public class Db {
 	public static List<Book> getBooksByUserId(String username, String password) {
 		return MAP.get(new User(username, password));
 	}
+
+	public static Map<String, Book> getAllBooks() {
+		final Map<String, Book> result = new HashMap<String, Book>();
+		for (final List<Book> books : MAP.values()) {
+			for (final Book book : books) {
+				result.put(book.getName(), book);
+			}
+		}
+		return result;
+	}
 }
